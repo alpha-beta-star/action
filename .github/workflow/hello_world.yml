@@ -1,0 +1,16 @@
+name: "Hello World"
+
+on:
+  push:
+      branches:
+      - "master"
+      - "main"
+
+jobs:
+    hello:
+         runs-on: "Ubuntu-latest"
+         steps:
+         - name: greet1
+           run: echo "Hello World"
+         - name: greet2
+           run: echo "Work comleted"
