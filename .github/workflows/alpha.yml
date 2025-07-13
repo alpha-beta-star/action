@@ -10,4 +10,4 @@ jobs:
               run: echo "hello world"
 
             - name: "completed greet"
-              run: "task successfully completed"
+              run: echo "task successfully completed"
