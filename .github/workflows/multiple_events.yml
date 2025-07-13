@@ -1,0 +1,28 @@
+name: "Multiple events"
+
+on:
+  push:
+  pull_request:
+        branches:
+            - master
+        types:
+            - opened
+            - closed
+  schedule:
+        - cron: '11 09 13 7 *'
+
+
+jobs:
+    temp:
+        if: ${{github.event_name == 'pull_request' && github.event.action == 'opened'}}
+        runs-on: "ubuntu-latest"
+        steps:
+            - name: "opened"
+              run: echo "Pull request opened"
+    temp2:
+        if: ${{github.event_name == 'pull_request' && github.event.action == 'closed'}}
+        runs-on: "ubuntu-latest"
+        steps:
+            - name: "closed"
+              run: echo "Pull_request closed"
+    
