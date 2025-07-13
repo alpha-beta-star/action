@@ -1,0 +1,13 @@
+name: "alpha"
+
+on: "push"
+
+jobs:
+    alpha:
+         runs-on: "ubuntu-latest"
+         steps:
+            - name: "Alarm"
+              run: echo "hello world"
+
+            - name: "completed greet"
+              run: "task successfully completed"
